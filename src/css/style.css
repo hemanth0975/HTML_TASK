@@ -1,2 +1,48 @@
-input.form-checkbox {
+/* Custom checkbox styles */
+.custom-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #2f2f2f;
+    border-radius: 4px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.custom-checkbox input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.custom-checkbox::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+.custom-checkbox input:checked + .checkmark {
+    background-color: #008002;
+    border: 1px solid #008002;
+}
+
+.custom-checkbox input:checked + .checkmark::after {
+    content: "✗";
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Label styles */
+.custom-checkbox input:checked ~ label {
+    color: #008002;
+    text-decoration: line-through;
 }
